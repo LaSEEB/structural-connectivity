@@ -1,7 +1,7 @@
 # Structural Connectivity Analysis
 
 ## Overview
-This repository contains two scripts: `tractography.sh` for processing diffusion MRI data to perform tractography and generate the connectivity matrix; and `count_streamlines.sh` for processing the tractogram and calculating the number of streamlines for each ROI of an atlas. 
+This repository contains two scripts: `tractography.sh` for processing diffusion MRI data to perform tractography and generate the connectivity matrix and `count_streamlines.sh` for processing the tractogram and calculating the number of streamlines for each ROI of an atlas. 
 
 
 ## Table of Contents
@@ -12,6 +12,7 @@ This repository contains two scripts: `tractography.sh` for processing diffusion
    - [Counting Streamlines](#counting-streamlines)
 4. [Notes](#notes)
 5. [Troubleshooting](#troubleshooting)
+6. [Contact](#contact)
 
 ## Software Prerequisites
 - [MRtrix3](https://www.mrtrix.org/) (we used version 3.0.3)
@@ -24,11 +25,17 @@ The scripts can require the following inputs:
 3. BVAL: b-value file
 4. ANAT: Structural image (e.g., T1-weighted, in NIFTI format)
 5. ATLAS: Atlas file in standard space (in NIFTI format)
-6. WARP_STD2STRUCT: Warp of the transformation from standard space to structural space(in NIFTI format)
+6. WARP_STD2STRUCT: Warp of the transformation from standard space to structural space (in NIFTI format)
 7. TRACT_FILE: tract file (.tck)
 8. REMOVE_TEMP: Flag (0 or 1) for removing temporary files
 
 ## Usage
+
+First, make sure that the scripts have the right permisison to be run, by using chmod:
+```bash
+chmod 755 tractography.sh
+chmod 755 count_streamlines.sh
+```
 
 ### Running Tractography
 ```bash
@@ -57,8 +64,8 @@ Example:
 
 ## Troubleshooting
 - Ensure all input files exist and are in the correct format.
-- Check if FSL and MRtrix3 are properly installed and available in your path. Especially MRtrix3 can run into some issues with Python>=3.10, with failed imports as the main symptom. If that's the case downgrade to at most python3.9.
-- For coregistration, do manual inspection of intermediate images.
+- Check if FSL and MRtrix3 are correctly installed and available in your path. MRtrix3 can run into some issues with Python>=3.10, with failed imports being the main symptom. If that's the case, downgrade to, at most, python3.9.
+- For coregistration, do a manual inspection of intermediate images.
 - If you find some other problem, feel free to create an issue.
 
 ## Contact
