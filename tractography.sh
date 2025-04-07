@@ -13,10 +13,10 @@ display_usage() {
 	echo "Usage"
 	tput sgr0
 	echo ""
-	echo "It requires 6 arguments: DWI, bvecs, bvals, T1, ATLAS, WARP_STD2STRUCT, REMOVE_TEMP."
+	echo "It requires 7 arguments: DWI, bvecs, bvals, T1, ATLAS, WARP_STD2STRUCT, REMOVE_TEMP."
 	}
 
-if [ $# -lt 6 ] # if there are less than 2 arguments
+if [ $# -lt 7 ] # if there are less than 7 arguments
 then
 	display_usage
 	exit 1
@@ -114,8 +114,6 @@ tck2connectome -symmetric -zero_diagonal -scale_invnodevol -tck_weights_in sift.
 ###  Ending
 cd ..
 # Remove unneeded data from storage because it is not needed anymore
-if [ $REMOVE_TEMP=1 ]; then
+if [ $REMOVE_TEMP -eq 1 ]; then
 	rm -rf temp
 fi
-
-
