@@ -9,7 +9,7 @@ This repository contains two scripts: `tractography.sh` for processing diffusion
 2. [Input Requirements](#input-requirements)
 3. [Usage](#usage)
    - [Running Tractography](#running-tractography)
-   - [Counting Streamlines](#counting-streamlines)
+   - [Running Count Streamlines](#running-count-streamlines)
 4. [Notes](#notes)
 5. [Troubleshooting](#troubleshooting)
 6. [Contact](#contact)
@@ -47,7 +47,7 @@ Example:
 ./tractography.sh subject1_dwi.nii.gz subject1_dwi.bvec subject1_dwi.bval subject1_t1.nii.gz atlas.nii.gz subject1_std2struct_warp.nii.gz 1
 ```
 
-### Counting Streamlines
+### Running Count Streamlines
 ```bash
 ./count_streamlines.sh <DWI> <ANAT> <WARP_STD2STRUCT> <ATLAS> <TRACKS_FILE> <REMOVE_TEMP>
 ```
